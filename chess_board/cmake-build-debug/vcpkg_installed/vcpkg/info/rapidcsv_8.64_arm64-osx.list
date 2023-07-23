@@ -1,0 +1,8 @@
+arm64-osx/
+arm64-osx/include/
+arm64-osx/include/rapidcsv.h
+arm64-osx/share/
+arm64-osx/share/rapidcsv/
+arm64-osx/share/rapidcsv/copyright
+arm64-osx/share/rapidcsv/vcpkg.spdx.json
+arm64-osx/share/rapidcsv/vcpkg_abi_info.txt

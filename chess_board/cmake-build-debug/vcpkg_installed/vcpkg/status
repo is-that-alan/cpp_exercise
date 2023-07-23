@@ -1,0 +1,16 @@
+Package: vcpkg-cmake
+Version: 2023-05-04
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 7aaea90e8730fdb2545fd2206ce9fd10ddfd21d432f3a2e87dbce85b811307d3
+Status: install ok installed
+
+Package: rapidcsv
+Version: 8.64
+Depends: vcpkg-cmake
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 0f35a80c16bbaa93367e5c13993458b7ca89f649ff4347ffa2ff6de4a0f8ed51
+Description: Rapidcsv is a C++ header-only library for CSV parsing.
+Status: install ok installed
+

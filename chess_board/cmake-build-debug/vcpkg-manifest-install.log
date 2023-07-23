@@ -1,0 +1,8 @@
+Detecting compiler hash for triplet arm64-osx...
+All requested packages are currently installed.
+Total install time: 292 ns
+rapidcsv is header-only and can be used from CMake via:
+
+    find_path(RAPIDCSV_INCLUDE_DIRS "rapidcsv.h")
+    target_include_directories(main PRIVATE ${RAPIDCSV_INCLUDE_DIRS})
+

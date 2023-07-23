@@ -1,0 +1,3 @@
+/Users/alan/Projects/new_cpp/cmake-build-debug/CMakeFiles/new_cpp.dir
+/Users/alan/Projects/new_cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alan/Projects/new_cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

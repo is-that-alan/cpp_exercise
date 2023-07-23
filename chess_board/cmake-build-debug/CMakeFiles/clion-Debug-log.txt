@@ -1,0 +1,14 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_TOOLCHAIN_FILE=/Users/alan/.clion-vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake -G Ninja -S /Users/alan/Projects/new_cpp -B /Users/alan/Projects/new_cpp/cmake-build-debug
+-- Running vcpkg install
+Detecting compiler hash for triplet arm64-osx...
+All requested packages are currently installed.
+Total install time: 208 ns
+rapidcsv is header-only and can be used from CMake via:
+
+    find_path(RAPIDCSV_INCLUDE_DIRS "rapidcsv.h")
+    target_include_directories(main PRIVATE ${RAPIDCSV_INCLUDE_DIRS})
+
+-- Running vcpkg install - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/alan/Projects/new_cpp/cmake-build-debug
