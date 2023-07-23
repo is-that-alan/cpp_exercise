@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/alan/Projects/new_cpp/cmake-build-debug",
-		"source" : "/Users/alan/Projects/new_cpp"
+		"build" : "/Users/alan/Projects/cpp_exercise/chess_board/cmake-build-debug",
+		"source" : "/Users/alan/Projects/cpp_exercise/chess_board"
 	},
 	"version" : 
 	{

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/alan/Projects/new_cpp
+# Install script for directory: /Users/alan/Projects/cpp_exercise/chess_board
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/alan/Projects/new_cpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/alan/Projects/cpp_exercise/chess_board/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

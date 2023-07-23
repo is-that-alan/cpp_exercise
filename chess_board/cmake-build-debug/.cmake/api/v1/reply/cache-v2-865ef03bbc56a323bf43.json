@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/alan/Projects/new_cpp/cmake-build-debug"
+			"value" : "/Users/alan/Projects/cpp_exercise/chess_board/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/alan/Projects/new_cpp/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/alan/Projects/cpp_exercise/chess_board/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -539,7 +539,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/alan/Projects/new_cpp"
+			"value" : "/Users/alan/Projects/cpp_exercise/chess_board"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1083,10 +1083,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "The CMake toolchain file"
 				}
 			],
-			"type" : "UNINITIALIZED",
+			"type" : "FILEPATH",
 			"value" : "/Users/alan/.clion-vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake"
 		},
 		{
@@ -1130,18 +1130,6 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "VCPKG_BOOTSTRAP_OPTIONS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Additional options to bootstrap vcpkg"
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
 			"name" : "VCPKG_INSTALLED_DIR",
 			"properties" : 
 			[
@@ -1151,19 +1139,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Users/alan/Projects/new_cpp/cmake-build-debug/vcpkg_installed"
-		},
-		{
-			"name" : "VCPKG_INSTALL_OPTIONS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Additional install options to pass to vcpkg"
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
+			"value" : "/Users/alan/.clion-vcpkg/vcpkg/installed"
 		},
 		{
 			"name" : "VCPKG_MANIFEST_DIR",
@@ -1175,7 +1151,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Users/alan/Projects/new_cpp"
+			"value" : ""
 		},
 		{
 			"name" : "VCPKG_MANIFEST_INSTALL",
@@ -1186,8 +1162,8 @@
 					"value" : "Install the dependencies listed in your manifest:\n    If this is off, you will have to manually install your dependencies.\n    See https://github.com/microsoft/vcpkg/tree/master/docs/specifications/manifests.md for more info.\n"
 				}
 			],
-			"type" : "BOOL",
-			"value" : "ON"
+			"type" : "INTERNAL",
+			"value" : "OFF"
 		},
 		{
 			"name" : "VCPKG_MANIFEST_MODE",
@@ -1199,31 +1175,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
-			"name" : "VCPKG_OVERLAY_PORTS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Overlay ports to use for vcpkg install in manifest mode"
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
-			"name" : "VCPKG_OVERLAY_TRIPLETS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Overlay triplets to use for vcpkg install in manifest mode"
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
+			"value" : "OFF"
 		},
 		{
 			"name" : "VCPKG_PREFER_SYSTEM_LIBS",
@@ -1323,7 +1275,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "Z_VCPKG_CL",
@@ -1359,7 +1311,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Users/alan/Projects/new_cpp/cmake-build-debug/vcpkg_installed"
+			"value" : "/Users/alan/.clion-vcpkg/vcpkg/installed"
 		},
 		{
 			"name" : "new_cpp_BINARY_DIR",
@@ -1371,7 +1323,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/alan/Projects/new_cpp/cmake-build-debug"
+			"value" : "/Users/alan/Projects/cpp_exercise/chess_board/cmake-build-debug"
 		},
 		{
 			"name" : "new_cpp_IS_TOP_LEVEL",
@@ -1395,7 +1347,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/alan/Projects/new_cpp"
+			"value" : "/Users/alan/Projects/cpp_exercise/chess_board"
 		}
 	],
 	"kind" : "cache",
