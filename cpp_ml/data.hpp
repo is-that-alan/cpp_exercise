@@ -1,11 +1,14 @@
+// Guards to prevent multiple inclusion of the same header file
 #ifndef __DATA_H
 #define __DATA_H
 
-#include <vector>
+
+#include <vector> // Dynamic arrays
 #include "stdint.h"
 #include "stdio.h"
 
 class data{
+    // Define as pointer to allow for dynamic allocation of memory
     std::vector<uint8_t> * feature_vector; //No class
     uint8_t label;
     int enum_label;
