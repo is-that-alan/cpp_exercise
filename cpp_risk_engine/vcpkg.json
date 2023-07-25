@@ -1,0 +1,9 @@
+{
+  "name" : "cpp-risk-engine",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "9d47b24eacbd1cd94f139457ef6cd35e5d92cc84",
+  "dependencies" : [ {
+    "name" : "boost-ublas",
+    "version>=" : "1.82.0#2"
+  } ]
+}
