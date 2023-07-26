@@ -18,4 +18,3 @@ IVaR:
 
 CVaR:
 * Expected Short Fall, lose an average of X on any trading day
-
