@@ -1,0 +1,9 @@
+Package: boost-variant2
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-assert, boost-config, boost-mp11, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: c8c0adb43102c8cc6d4bca208a28a982cf5dadb70f96f9f80c30a59618efcdd9
+Description: Boost variant2 module
+Status: install ok half-installed

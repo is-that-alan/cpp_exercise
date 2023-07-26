@@ -1,0 +1,6 @@
+Package: vcpkg-cmake
+Version: 2023-05-04
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 7aaea90e8730fdb2545fd2206ce9fd10ddfd21d432f3a2e87dbce85b811307d3
+Status: install ok half-installed

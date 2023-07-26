@@ -1,0 +1,9 @@
+Package: boost-ratio
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-config, boost-core, boost-integer, boost-mpl, boost-rational, boost-static-assert, boost-type-traits, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: ca188e3bb2179d2f175f6ef6b18b3871ae583b261b363ab0c7f85deccacc050e
+Description: Boost ratio module
+Status: install ok installed

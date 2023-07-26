@@ -1,0 +1,9 @@
+Package: boost-mpl
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-config, boost-core, boost-predef, boost-preprocessor, boost-static-assert, boost-type-traits, boost-utility, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 5c0c4448cff744520a92f4baf346b7ded05584356b6b1973dc2b25a30744d3be
+Description: Boost mpl module
+Status: install ok half-installed

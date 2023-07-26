@@ -1,0 +1,9 @@
+Package: boost-endian
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-config, boost-core, boost-static-assert, boost-type-traits, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 40cfb3531965df1670d0ab2f193434485daa1539482a3b930c29b0f707384960
+Description: Boost endian module
+Status: install ok installed

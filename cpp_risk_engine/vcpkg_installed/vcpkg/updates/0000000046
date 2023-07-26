@@ -1,0 +1,9 @@
+Package: boost-detail
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-config, boost-core, boost-preprocessor, boost-static-assert, boost-type-traits, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 654bab1e4d3ed302cfd9dcf1153ce1165e9f2317843055e7ae2e392dd3e925e9
+Description: Boost detail module
+Status: install ok half-installed

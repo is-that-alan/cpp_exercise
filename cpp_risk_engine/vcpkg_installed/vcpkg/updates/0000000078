@@ -1,0 +1,9 @@
+Package: boost-functional
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-config, boost-core, boost-function, boost-function-types, boost-mpl, boost-preprocessor, boost-type-traits, boost-typeof, boost-utility, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 7abc07c212c58fa0ca4964c6bb73902536551f89ca5b711aeb0cd8d3e70f8361
+Description: Boost functional module
+Status: install ok half-installed

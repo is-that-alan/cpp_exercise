@@ -1,0 +1,15 @@
+arm64-osx/
+arm64-osx/include/
+arm64-osx/include/boost/
+arm64-osx/include/boost/any.hpp
+arm64-osx/include/boost/any/
+arm64-osx/include/boost/any/bad_any_cast.hpp
+arm64-osx/include/boost/any/basic_any.hpp
+arm64-osx/include/boost/any/fwd.hpp
+arm64-osx/include/boost/any/unique_any.hpp
+arm64-osx/share/
+arm64-osx/share/boost-any/
+arm64-osx/share/boost-any/copyright
+arm64-osx/share/boost-any/usage
+arm64-osx/share/boost-any/vcpkg.spdx.json
+arm64-osx/share/boost-any/vcpkg_abi_info.txt

@@ -1,0 +1,9 @@
+Package: boost-property-tree
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-any, boost-assert, boost-bind, boost-config, boost-core, boost-format, boost-iterator, boost-mpl, boost-multi-index, boost-optional, boost-range, boost-serialization, boost-static-assert, boost-throw-exception, boost-type-traits, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 85c789b6f8a121463f43da75dd87d5b58e4119320bb7a306f6612c8680adcabd
+Description: Boost property_tree module
+Status: install ok installed

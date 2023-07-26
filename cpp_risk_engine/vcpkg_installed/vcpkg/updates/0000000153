@@ -1,0 +1,9 @@
+Package: boost-ublas
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-compute, boost-concept-check, boost-config, boost-core, boost-interval, boost-iterator, boost-mpl, boost-range, boost-serialization, boost-smart-ptr, boost-static-assert, boost-type-traits, boost-typeof, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 76d8f31c1e8fea12dd2acfe83749791eb1a22c8b6391aff55e743a57df76c009
+Description: Boost ublas module
+Status: install ok installed

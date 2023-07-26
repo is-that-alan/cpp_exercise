@@ -1,0 +1,9 @@
+Package: boost-tti
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-config, boost-function-types, boost-mpl, boost-preprocessor, boost-type-traits, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 1baadbea56cd03bd4ee2c070c9c6fc53284699fb1f32ef42f6e4deed269db291
+Description: Boost tti module
+Status: install ok half-installed

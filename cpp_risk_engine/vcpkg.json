@@ -5,5 +5,12 @@
   "dependencies" : [ {
     "name" : "boost-ublas",
     "version>=" : "1.82.0#2"
+  }, {
+    "name" : "boost-any",
+    "version>=" : "1.82.0#2"
+  }, {
+    "name" : "fmt",
+    "version>=" : "10.0.0",
+    "$comment" : "    find_package(fmt CONFIG REQUIRED)\n\n    target_link_libraries(main PRIVATE fmt::fmt)\n"
   } ]
 }

@@ -1,0 +1,9 @@
+Package: boost-dynamic-bitset
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-assert, boost-config, boost-container-hash, boost-core, boost-integer, boost-move, boost-static-assert, boost-throw-exception, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: ace8f29981e7a5524c9e229708020407af36526599005b7937e0be16a603eae1
+Description: Boost dynamic_bitset module
+Status: install ok installed

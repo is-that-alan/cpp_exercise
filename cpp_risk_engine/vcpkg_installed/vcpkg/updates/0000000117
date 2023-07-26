@@ -1,0 +1,9 @@
+Package: boost-thread
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-algorithm, boost-assert, boost-atomic, boost-bind, boost-build, boost-chrono, boost-concept-check, boost-config, boost-container, boost-container-hash, boost-core, boost-date-time, boost-exception, boost-function, boost-intrusive, boost-io, boost-iterator, boost-lexical-cast, boost-modular-build-helper, boost-move, boost-optional, boost-predef, boost-preprocessor, boost-smart-ptr, boost-static-assert, boost-system, boost-throw-exception, boost-tuple, boost-type-traits, boost-utility, boost-vcpkg-helpers, boost-winapi, vcpkg-cmake
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 13651ee23481d7615e33de441d3a360463bae82f9f7db555a1ef4c1d7acabe79
+Description: Boost thread module
+Status: install ok installed

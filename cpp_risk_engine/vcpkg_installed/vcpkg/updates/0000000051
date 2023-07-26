@@ -1,0 +1,9 @@
+Package: boost-variant
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-assert, boost-bind, boost-config, boost-container-hash, boost-core, boost-detail, boost-integer, boost-move, boost-mpl, boost-preprocessor, boost-static-assert, boost-throw-exception, boost-type-index, boost-type-traits, boost-utility, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 5895ee87c786defef67b660d5c57306ec22332df0f6223acf690677264677766
+Description: Boost variant module
+Status: install ok installed

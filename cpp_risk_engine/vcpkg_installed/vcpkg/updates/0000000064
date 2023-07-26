@@ -1,0 +1,9 @@
+Package: boost-build
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-uninstall
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: bc3cd5e191d4b1197dbac1613e4bdc43bf2358d9e40e8deebb1140924519fb0a
+Description: Boost.Build
+Status: install ok half-installed

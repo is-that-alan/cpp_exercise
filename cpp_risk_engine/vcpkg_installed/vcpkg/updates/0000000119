@@ -1,0 +1,9 @@
+Package: boost-proto
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-config, boost-core, boost-fusion, boost-mpl, boost-preprocessor, boost-range, boost-static-assert, boost-type-traits, boost-typeof, boost-utility, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 82ff13ad6507553c3005329fb287f4d6b0b2924732cdd68ff1d10a47fd4de9c3
+Description: Boost proto module
+Status: install ok installed

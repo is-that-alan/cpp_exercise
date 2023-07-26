@@ -1,0 +1,9 @@
+Package: boost-multi-index
+Version: 1.82.0
+Port-Version: 2
+Depends: boost-assert, boost-bind, boost-config, boost-container-hash, boost-core, boost-integer, boost-iterator, boost-move, boost-mpl, boost-preprocessor, boost-smart-ptr, boost-static-assert, boost-throw-exception, boost-tuple, boost-type-traits, boost-utility, boost-vcpkg-helpers
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 018b03540352649ca6a114c0d4cf7c9f14b4afc5c812d852e368615e57b7418e
+Description: Boost multi_index module
+Status: install ok installed

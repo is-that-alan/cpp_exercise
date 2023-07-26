@@ -1,0 +1,9 @@
+Package: boost-atomic
+Version: 1.82.0
+Port-Version: 3
+Depends: boost-align, boost-assert, boost-build, boost-config, boost-modular-build-helper, boost-predef, boost-preprocessor, boost-static-assert, boost-type-traits, boost-vcpkg-helpers, boost-winapi, vcpkg-cmake
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: ac753345d28ae45e0f183f0b1182638bb348ac0586691cfbc544b95bf2b2f9ae
+Description: Boost atomic module
+Status: install ok installed
