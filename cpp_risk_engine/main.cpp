@@ -10,6 +10,8 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <random>
+#include <algorithm>
 
 using std::string, std::vector, std::cout;
 
@@ -103,7 +105,48 @@ public:
 
         return returns;
     }
+    double calculateMonteCarloVar(int num_simulations = 10000, double confidence_level = 0.95) {
+        std::vector<double> log_returns;
+        auto prices = this -> priceSeries;
+        for (size_t i = 1; i < prices.size(); ++i) {
+            log_returns.push_back(std::log(prices[i] / prices[i - 1]));
+        }
 
+        double mean_return = std::accumulate(log_returns.begin(), log_returns.end(), 0.0) / log_returns.size();
+        double std_dev = 0.0;
+        for (double log_return : log_returns) {
+            std_dev += (log_return - mean_return) * (log_return - mean_return);
+        }
+        std_dev = std::sqrt(std_dev / (log_returns.size() - 1));
+
+        std::default_random_engine generator;
+        std::normal_distribution<double> distribution(mean_return, std_dev);
+
+        std::vector<std::vector<double>> sim_returns(num_simulations, std::vector<double>(log_returns.size()));
+        for (int i = 0; i < num_simulations; ++i) {
+            for (size_t j = 0; j < log_returns.size(); ++j) {
+                sim_returns[i][j] = distribution(generator);
+            }
+        }
+
+        std::vector<std::vector<double>> sim_prices(num_simulations, std::vector<double>(prices.size()));
+        for (int i = 0; i < num_simulations; ++i) {
+            sim_prices[i][0] = prices.back();
+            for (size_t j = 1; j < prices.size(); ++j) {
+                sim_prices[i][j] = sim_prices[i][j - 1] * std::exp(sim_returns[i][j - 1]);
+            }
+        }
+
+        std::vector<double> final_returns;
+        for (const auto& sim_price : sim_prices) {
+            final_returns.push_back(std::log(sim_price.back() / prices.back()));
+        }
+
+        std::sort(final_returns.begin(), final_returns.end());
+
+        double var = final_returns[static_cast<int>((1 - confidence_level) * num_simulations)];
+        return var;
+    }
     // TODO: Implement other interpolation methodologies
     double calculateHistoricalValueAtRisk(double alpha) {
         // Get the vector associated with the specified ticker
