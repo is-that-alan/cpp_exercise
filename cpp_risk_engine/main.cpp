@@ -16,31 +16,12 @@
 #include <boost/math/distributions/normal.hpp>
 using std::string, std::vector, std::cout;
 
-//#include <boost/numeric/ublas/matrix.hpp>
-//#include <boost/numeric/ublas/io.hpp>
-//
-//int main () {
-//    using namespace boost::numeric::ublas;
-//    matrix<double> m (3, 3);
-//
-//    // Assign values to the matrix
-//    int value = 1;
-//    for (unsigned i = 0; i < m.size1 (); ++ i)
-//        for (unsigned j = 0; j < m.size2 (); ++ j)
-//            m (i, j) = value++;
-//
-//    std::cout << m << std::endl;
-//
-//    return 0;
-//}
-
 enum Distribution {Normal, T};
 
 enum class ReturnType {
     PriceReturn,
     LogReturn
 };
-
 
 
 class Constituent {
@@ -55,7 +36,6 @@ private:
 
     Distribution seriesDistribution;
 
-
 public:
     Constituent(std::string ticker, std::vector<double> series) {
         this->ticker = ticker;
@@ -69,11 +49,6 @@ public:
     void setDistribution(Distribution seriesDistribution) {
         this->seriesDistribution = seriesDistribution;
     }
-//    std::vector<double> caculateReutrn(){
-//        this -> priceSeries
-//
-//    }
-
 
     // TODO: Check if the output is valid
     std::vector<double> calculateReturn(ReturnType returnType) {
@@ -101,10 +76,8 @@ public:
                 std::cerr << "Error: Invalid return type specified.\n";
                 return {};
             }
-
             returns.push_back(returnVal);
         }
-
         return returns;
     }
 
@@ -165,9 +138,7 @@ public:
         return sortedPrices[index];
     }
 
-    double
-    var_parametric(double, double portfolioStd, Distribution distribution = Distribution::Normal, double alpha = 5,
-                   int dof = 6) {
+    double var_parametric(double, double portfolioStd, Distribution distribution = Distribution::Normal, double alpha = 5, int dof = 6) {
         auto portfolioReturns = this->calculateReturn(ReturnType::PriceReturn);
         double VaR = 0.0;
 
@@ -185,7 +156,7 @@ public:
         }
         return VaR;
     }
-}
+};
 
 
 int main() {
