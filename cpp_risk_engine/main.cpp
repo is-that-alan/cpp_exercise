@@ -138,19 +138,22 @@ public:
         return sortedPrices[index];
     }
 
-    double var_parametric(double, double portfolioStd, Distribution distribution = Distribution::Normal, double alpha = 5, int dof = 6) {
-        auto portfolioReturns = this->calculateReturn(ReturnType::PriceReturn);
+    double var_parametric(std::vector<double> portfolioReturns, double portfolioStd,
+                          Distribution distribution = Distribution::Normal, double alpha = 5, int dof = 6) {
         double VaR = 0.0;
+        double portfolioMean =
+                std::accumulate(portfolioReturns.begin(), portfolioReturns.end(), 0.0) / portfolioReturns.size();
 
         if (distribution == Distribution::Normal) {
             boost::math::normal norm;
-            VaR = boost::math::quantile(norm, 1 - alpha / 100) * portfolioStd - portfolioReturns;
+            VaR = boost::math::quantile(norm, 1 - alpha / 100) * portfolioStd - portfolioMean;
         } else if (distribution == Distribution::T) {
             if (dof <= 2) {
                 throw std::invalid_argument("Degrees of freedom must be greater than 2 for t-distribution.");
             }
             boost::math::students_t dist(dof);
-            VaR = std::sqrt((dof - 2) / static_cast<double>(dof)) * boost::math::quantile(dist, 1 - alpha / 100) * portfolioStd - portfolioReturns;
+            VaR = std::sqrt((dof - 2) / static_cast<double>(dof)) * boost::math::quantile(dist, 1 - alpha / 100) *
+                  portfolioStd - portfolioMean;
         } else {
             throw std::invalid_argument("Expected distribution type 'Normal'/'T'");
         }
