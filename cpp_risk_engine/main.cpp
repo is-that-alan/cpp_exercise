@@ -12,7 +12,8 @@
 #include <cmath>
 #include <random>
 #include <algorithm>
-
+#include <boost/math/distributions/students_t.hpp>
+#include <boost/math/distributions/normal.hpp>
 using std::string, std::vector, std::cout;
 
 //#include <boost/numeric/ublas/matrix.hpp>
@@ -33,7 +34,7 @@ using std::string, std::vector, std::cout;
 //    return 0;
 //}
 
-enum distribution {Normal, T};
+enum Distribution {Normal, T};
 
 enum class ReturnType {
     PriceReturn,
@@ -51,21 +52,22 @@ private:
         std::sort(priceSeries.begin(), priceSeries.end());
         int index = static_cast<int> (alpha * priceSeries.size() / 100);
     }
-    distribution seriesDistribution;
 
+    Distribution seriesDistribution;
 
 
 public:
     Constituent(std::string ticker, std::vector<double> series) {
-        this -> ticker = ticker;
+        this->ticker = ticker;
         this->priceSeries = series;
     }
 
     std::vector<double> getPriceSeries() {
         return this->priceSeries;
     }
-    void setDistribution(distribution seriesDistribution){
-        this -> seriesDistribution = seriesDistribution;
+
+    void setDistribution(Distribution seriesDistribution) {
+        this->seriesDistribution = seriesDistribution;
     }
 //    std::vector<double> caculateReutrn(){
 //        this -> priceSeries
@@ -75,7 +77,7 @@ public:
 
     // TODO: Check if the output is valid
     std::vector<double> calculateReturn(ReturnType returnType) {
-        auto prices = this -> priceSeries;
+        auto prices = this->priceSeries;
         if (prices.size() < 2) {
             std::cerr << "Error: The vector must have at least two elements to calculate the returns.\n";
             return {};
@@ -105,16 +107,17 @@ public:
 
         return returns;
     }
+
     double calculateMonteCarloVar(int num_simulations = 10000, double confidence_level = 0.95) {
         std::vector<double> log_returns;
-        auto prices = this -> priceSeries;
+        auto prices = this->priceSeries;
         for (size_t i = 1; i < prices.size(); ++i) {
             log_returns.push_back(std::log(prices[i] / prices[i - 1]));
         }
 
         double mean_return = std::accumulate(log_returns.begin(), log_returns.end(), 0.0) / log_returns.size();
         double std_dev = 0.0;
-        for (double log_return : log_returns) {
+        for (double log_return: log_returns) {
             std_dev += (log_return - mean_return) * (log_return - mean_return);
         }
         std_dev = std::sqrt(std_dev / (log_returns.size() - 1));
@@ -138,7 +141,7 @@ public:
         }
 
         std::vector<double> final_returns;
-        for (const auto& sim_price : sim_prices) {
+        for (const auto &sim_price: sim_prices) {
             final_returns.push_back(std::log(sim_price.back() / prices.back()));
         }
 
@@ -147,33 +150,42 @@ public:
         double var = final_returns[static_cast<int>((1 - confidence_level) * num_simulations)];
         return var;
     }
+
     // TODO: Implement other interpolation methodologies
     double calculateHistoricalValueAtRisk(double alpha) {
         // Get the vector associated with the specified ticker
         // Sort the price series in ascending order
-        std::sort(priceSeries.begin(), priceSeries.end());
+        std::vector<double> sortedPrices = priceSeries;
+        std::sort(sortedPrices.begin(), sortedPrices.end());
 
         // Calculate the index corresponding to the alpha level
-        int index = std::round<int>(alpha * priceSeries.size() / 100);
+        int index = std::round<int>(alpha * sortedPrices.size() / 100);
 
         // Return the Value at Risk (VaR) at the specified alpha level
-        //
-        return priceSeries[index];
+        return sortedPrices[index];
     }
 
-    double calculateParametricValueAtRisk(string distribution, double alpha, double dof6){
-        if (this -> seriesDistribution == distribution::Normal){
+    double
+    var_parametric(double, double portfolioStd, Distribution distribution = Distribution::Normal, double alpha = 5,
+                   int dof = 6) {
+        auto portfolioReturns = this->calculateReturn(ReturnType::PriceReturn);
+        double VaR = 0.0;
 
+        if (distribution == Distribution::Normal) {
+            boost::math::normal norm;
+            VaR = boost::math::quantile(norm, 1 - alpha / 100) * portfolioStd - portfolioReturns;
+        } else if (distribution == Distribution::T) {
+            if (dof <= 2) {
+                throw std::invalid_argument("Degrees of freedom must be greater than 2 for t-distribution.");
+            }
+            boost::math::students_t dist(dof);
+            VaR = std::sqrt((dof - 2) / static_cast<double>(dof)) * boost::math::quantile(dist, 1 - alpha / 100) * portfolioStd - portfolioReturns;
+        } else {
+            throw std::invalid_argument("Expected distribution type 'Normal'/'T'");
         }
-        else if (this -> seriesDistribution == distribution::T){
-
-        }
-        else{
-            throw ("Not implemented Error");
-        }
+        return VaR;
     }
-};
-
+}
 
 
 int main() {
