@@ -1,15 +1,8 @@
-/*
-
- *
- *
- *
- */
-
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <unordered_map>
 #include <random>
 #include <algorithm>
 #include <boost/math/distributions/students_t.hpp>
@@ -18,10 +11,12 @@ using std::string, std::vector, std::cout;
 
 enum Distribution {Normal, T};
 
-enum class ReturnType {
+enum ReturnType {
     PriceReturn,
     LogReturn
 };
+class Constituent;
+class Strategy;
 
 
 class Constituent {
@@ -49,8 +44,15 @@ public:
     void setDistribution(Distribution seriesDistribution) {
         this->seriesDistribution = seriesDistribution;
     }
+    bool operator==(const Constituent& other) const {
+        // Here we compare the tickers of the two Constituents.
+        // You might want to compare other data members as well,
+        // depending on what it means for two Constituents to be equal.
+        return ticker == other.ticker;
+    }
+    const std::string& getTicker() const { return ticker; }
 
-    // TODO: Check if the output is valid
+
     std::vector<double> calculateReturn(ReturnType returnType) {
         auto prices = this->priceSeries;
         if (prices.size() < 2) {
@@ -160,6 +162,29 @@ public:
         return VaR;
     }
 };
+
+namespace std {
+    template<>
+    struct hash<Constituent> {
+        size_t operator()(const Constituent& c) const {
+            // Implement your hashing function here.
+            // As an example, you might use the hash of the `ticker` string:
+            return std::hash<std::string>()(c.getTicker());
+        }
+    };
+}
+
+
+class Strategy {
+private:
+    string ticker;
+    std::unordered_map<Constituent, double> holdings; // stores the {ticker:weight} mapping
+public:
+    Strategy(std::unordered_map<Constituent, double> strategyHolding) {
+        this->holdings = strategyHolding;
+    }
+};
+
 
 
 int main() {
